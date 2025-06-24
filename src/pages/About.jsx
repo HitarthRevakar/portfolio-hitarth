@@ -30,7 +30,7 @@ const About = () => {
   };
 
   const skills = {
-    frontend: ["React", "HTML5", "CSS3", "Tailwind", "Bootstrap 5"],
+    frontend: ["React", "HTML5", "CSS3", "TailwindCSS", "Bootstrap 5"],
     backend: ["Node.js", "Express.js", "Knex.js", "REST API"],
     database: ["MongoDB", "PostgreSQL", "Firebase"],
     tools: ["Git", "GitHub", "Postman", "VSCode", "Figma"],
