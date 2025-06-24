@@ -21,7 +21,7 @@ const projects = [
     tech: ["React", "TailwindCss","SPA","Framer Motion"],
     category: "Frontend",
     image: "/portfolio-img.png",
-    liveUrl: "#",
+    liveUrl: "https://portfolio-hitarth.vercel.app/",
     githubUrl: "https://github.com/HitarthRevakar/portfolio-hitarth.git",
     featured: false,
   },
@@ -33,7 +33,7 @@ const projects = [
     category: "Backend",
     image: "/my-task-app.png",
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/HitarthRevakar/MyTaskApp",
     featured: false,
   },
   {
