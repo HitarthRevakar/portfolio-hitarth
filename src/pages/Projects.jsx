@@ -4,7 +4,7 @@ import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "E-Commerce Platform   [Live Soon]",
     description:
       "Built a responsive e-commerce web app with cart, checkout, and admin dashboard using React, Node.js, and MongoDB.",
     tech: ["React", "Node.js", "MongoDB", "Tailwind"],
