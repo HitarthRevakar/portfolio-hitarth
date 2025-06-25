@@ -77,7 +77,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-neutral-100 dark:bg-neutral-900 relative overflow-hidden py-20 px-4"
+      className="min-h-screen bg-[#FDFAF6] dark:bg-neutral-900 relative overflow-hidden py-20 px-4"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}

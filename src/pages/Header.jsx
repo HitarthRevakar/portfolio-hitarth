@@ -41,7 +41,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full lg:bg-[#0f172a]/10 bg-[#0f172a] lg:backdrop-blur-lg text-white z-50">
+    <header className="fixed top-0 left-0 w-full lg:bg-[#0f172a]/70 bg-[#0f172a] lg:backdrop-blur-lg text-white z-50">
       <div className="w-full mx-auto lg:px-14 px-5 py-4 flex justify-between items-center">
         <a
           href="#home"
@@ -51,7 +51,7 @@ const Header = () => {
           &lt; HR /&gt;
         </a>
 
-        <nav className="hidden md:flex gap-10 text-sm font-medium uppercase tracking-wide">
+        <nav className="hidden md:flex gap-10 font-medium uppercase tracking-wide">
           {navLinks.map(({ href, label }, index) => (
             <motion.a
               key={label}
@@ -60,8 +60,8 @@ const Header = () => {
               initial={{ opacity: 0, y: -5 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05, duration: 0.3 }}
-              className={`relative transition duration-300 ${activeLink === href ? "text-white" : "text-gray-300"
-                } hover:text-gray-300`}
+              className={`relative transition duration-300 ${activeLink === href ? "text-white" : "text-gray-300 dark:text-gray-400 "
+                } hover:text-gray-400`}
             >
               {label}
               <span
@@ -74,7 +74,7 @@ const Header = () => {
 
         <button
           onClick={() => setMenuOpen(true)}
-          className="md:hidden text-gray-200 hover:text-white transition"
+          className="md:hidden cursor-pointer text-gray-200 hover:text-white transition"
           aria-label="Open Menu"
         >
           <Menu size={28} />
@@ -95,11 +95,11 @@ const Header = () => {
                 <button
                   onClick={() => setMenuOpen(false)}
                   aria-label="Close Menu"
-                  className="text-white hover:text-violet-500 "
+                  className="text-white  cursor-pointer hover:text-violet-500 "
                 >
                   <X
                     size={28}
-                    className="border border-gray-800 rounded-md p-1 size-9"
+                    className="border  border-gray-800 rounded-md p-1 size-9"
                   />
                 </button>
               </div>

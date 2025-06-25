@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen bg-neutral-100 dark:bg-neutral-900 relative overflow-hidden py-20 px-4"
+      className="min-h-screen bg-[#FDFAF6] dark:bg-neutral-900 relative overflow-hidden py-20 px-4"
     >
       <motion.div
         className="max-w-4xl mx-auto relative z-10"

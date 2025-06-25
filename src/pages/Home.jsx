@@ -3,6 +3,7 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react"; 
 import heroImage from "../assets/bg-img.jpg";
+import WaveEffect from "../components/WaveEffect";
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
       style={{ backgroundImage: `url(${heroImage})` }}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/70 z-0" />
+      <div className="absolute inset-0 bg-black/80  z-0" />
 
       {/* Center Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
@@ -79,6 +80,7 @@ const Home = () => {
           Scroll Down
         </span> */}
       </a>
+
     </section>
   );
 };

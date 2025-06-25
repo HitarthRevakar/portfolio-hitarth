@@ -51,7 +51,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-neutral-100 dark:bg-neutral-900 relative overflow-hidden pt-20 px-4"
+      className="min-h-screen bg-[#FDFAF6] dark:bg-neutral-900 relative overflow-hidden pt-20 pb-10 px-4"
     >
       {/* Background animations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
