@@ -1,7 +1,7 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react"; 
+import { ChevronDown } from "lucide-react";
 import heroImage from "../assets/bg-img.jpg";
 import WaveEffect from "../components/WaveEffect";
 
@@ -51,14 +51,25 @@ const Home = () => {
           real-world problems through code.
         </p>
 
-        <motion.a
-          href="#projects"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="mt-10 inline-block px-8 py-3 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-lg font-semibold  transition-all duration-300"
-        >
-          Projects
-        </motion.a>
+        <div className="mt-5 flex flex-row lg:flex-row sm:flex-row gap-4 justify-center items-center">
+          <motion.a
+            href="#projects"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block lg:px-8 lg:py-3 px-5 py-4 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-lg font-semibold transition-all duration-300"
+          >
+            View Projects
+          </motion.a>
+
+          <motion.a
+            href="#contact"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block  lg:px-8 lg:py-3 px-5 py-4 border-2 border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-white rounded-lg font-semibold transition-all duration-300"
+          >
+            Contact Me
+          </motion.a>
+        </div>
       </div>
 
       {/* Scroll Down Button */}
@@ -76,9 +87,9 @@ const Home = () => {
         >
           <ChevronDown className="w-10 h-10 text-indigo-400 group-hover:text-white transition-colors duration-300" />
         </motion.div>
-        {/* <span className="text-sm text-indigo-300 mt-1 group-hover:text-white transition duration-300">
+        <span className="text-[10px] text-indigo-300 mt-1 group-hover:text-white transition duration-300">
           Scroll Down
-        </span> */}
+        </span>
       </a>
 
     </section>

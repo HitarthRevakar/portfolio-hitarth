@@ -11,6 +11,15 @@ import {
 } from "lucide-react";
 import Photo from "../assets/photo.png";
 
+import {
+  FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaGitAlt, FaGithub, FaFigma, FaCode
+} from 'react-icons/fa';
+import {
+  SiTailwindcss, SiBootstrap, SiExpress, SiMongodb, SiPostgresql,
+  SiFirebase, SiPostman, SiKnexdotjs
+} from 'react-icons/si';
+import { TbApi } from 'react-icons/tb';
+
 const About = () => {
   const [activeTab, setActiveTab] = useState("skills");
 
@@ -30,10 +39,31 @@ const About = () => {
   };
 
   const skills = {
-    frontend: ["React", "HTML5", "CSS3", "TailwindCSS", "Bootstrap 5"],
-    backend: ["Node.js", "Express.js", "Knex.js", "REST API"],
-    database: ["MongoDB", "PostgreSQL", "Firebase"],
-    tools: ["Git", "GitHub", "Postman", "VSCode", "Figma"],
+    frontend: [
+      { name: "React", icon: FaReact, color: "text-blue-500" },
+      { name: "HTML5", icon: FaHtml5, color: "text-orange-500" },
+      { name: "CSS3", icon: FaCss3Alt, color: "text-blue-600" },
+      { name: "TailwindCSS", icon: SiTailwindcss, color: "text-cyan-500" },
+      { name: "Bootstrap 5", icon: SiBootstrap, color: "text-purple-600" }
+    ],
+    backend: [
+      { name: "Node.js", icon: FaNodeJs, color: "text-green-500" },
+      { name: "Express.js", icon: SiExpress, color: "text-gray-600" },
+      { name: "Knex.js", icon: SiKnexdotjs, color: "text-orange-600" },
+      { name: "REST API", icon: TbApi, color: "text-blue-500" }
+    ],
+    database: [
+      { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-700" },
+      { name: "Firebase", icon: SiFirebase, color: "text-yellow-500" }
+    ],
+    tools: [
+      { name: "Git", icon: FaGitAlt, color: "text-red-500" },
+      { name: "GitHub", icon: FaGithub, color: "text-gray-800 dark:text-white" },
+      { name: "Postman", icon: SiPostman, color: "text-orange-500" },
+      { name: "VSCode", icon: FaCode, color: "text-blue-600" },  // Using FaCode instead
+      { name: "Figma", icon: FaFigma, color: "text-purple-500" }
+    ]
   };
 
   // PDF download function
@@ -168,11 +198,10 @@ const About = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-medium transition-all duration-300 ${
-                    activeTab === tab.id
-                      ? "bg-gradient-to-r from-indigo-600 to-blue-500 text-white shadow-lg scale-105"
-                      : "bg-white/50 dark:bg-white/10 text-neutral-600 dark:text-neutral-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 hover:scale-102"
-                  }`}
+                  className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-medium transition-all duration-300 ${activeTab === tab.id
+                    ? "bg-gradient-to-r from-indigo-600 to-blue-500 text-white shadow-lg scale-105"
+                    : "bg-white/50 dark:bg-white/10 text-neutral-600 dark:text-neutral-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 hover:scale-102"
+                    }`}
                   type="button"
                 >
                   <Icon className="w-5 h-5" />
@@ -198,27 +227,39 @@ const About = () => {
                 </h3>
                 <div className="grid gap-8">
                   {Object.entries(skills).map(([category, list]) => (
-                    <div key={category} className="space-y-4">
+                    <motion.div
+                      key={category}
+                      className="space-y-4"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                    >
                       <h4 className="text-lg font-semibold text-indigo-600 dark:text-indigo-300 capitalize">
                         {category === "frontend"
                           ? "Frontend Development"
                           : category === "backend"
-                          ? "Backend Development"
-                          : category === "database"
-                          ? "Database & Storage"
-                          : "Development Tools"}
+                            ? "Backend Development"
+                            : category === "database"
+                              ? "Database & Storage"
+                              : "Development Tools"}
                       </h4>
                       <div className="flex flex-wrap gap-3">
-                        {list.map((item, idx) => (
-                          <span
-                            key={idx}
-                            className="px-4 py-2 bg-gradient-to-r from-indigo-500/20 to-blue-500/20 text-indigo-800 dark:text-indigo-200 rounded-full text-sm border border-indigo-500/30 hover:border-indigo-400/50 transition-all duration-300 hover:scale-105 cursor-default"
-                          >
-                            {item}
-                          </span>
-                        ))}
+                        {list.map((item, idx) => {
+                          const Icon = item.icon;
+                          return (
+                            <motion.span
+                              key={idx}
+                              whileHover={{ scale: 1.05, y: -2 }}
+                              whileTap={{ scale: 0.95 }}
+                              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-500/20 to-blue-500/20 text-indigo-800 dark:text-indigo-200 rounded-full text-sm border border-indigo-500/30 hover:border-indigo-400/50 transition-all duration-300 cursor-default group hover:shadow-lg hover:shadow-indigo-500/20"
+                            >
+                              <Icon className={`w-4 h-4 ${item.color} group-hover:rotate-12 transition-transform duration-200`} />
+                              {item.name}
+                            </motion.span>
+                          );
+                        })}
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
