@@ -4,19 +4,20 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Header from "./pages/Header";
 import Footer from "./pages/Footer";
-import "./App.css";
 import ScrollNav from "./components/ScrollNav";
+import "./App.css";
 
 function App() {
+
   return (
     <>
       <Header />
-        <main>
-          <Home />
-          <About />
-          <Projects />
-          <Contact />
-        </main>
+      <main>
+        <Home />
+        <About />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
       <ScrollNav />
     </>

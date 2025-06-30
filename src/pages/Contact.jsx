@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, User, Mail, MessageSquare, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -33,10 +34,10 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen bg-[#FDFAF6] dark:bg-neutral-900 relative overflow-hidden py-20 px-4"
+      className="w-full flex flex-col justify-center items-center bg-[#FDFAF6] dark:bg-neutral-900 relative overflow-hidden py-20 lg:px-25 px-5"
     >
       <motion.div
-        className="max-w-7xl mx-auto relative z-10"
+        className="w-full mx-auto relative z-10"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -124,21 +125,33 @@ const Contact = () => {
 
             {/* Social Links (Optional) */}
             <div className="pt-4 px-5">
-              <p className="font-semibold  text-neutral-800 dark:text-white mb-4 text-xl">Follow Me</p>
+              <p className="font-semibold text-neutral-800 dark:text-white mb-4 text-xl">Follow Me</p>
               <div className="flex space-x-4">
+                {/* GitHub */}
                 <a
                   href="https://github.com/HitarthRevakar"
-                  target='_blank'
-                  className="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center hover:bg-indigo-200 dark:hover:bg-indigo-900/50 transition-colors duration-300"
+                  target="_blank"
+                  className="w-10 h-10 bg-[#f0f0f0] dark:bg-[#24292e]/40 rounded-lg flex items-center justify-center hover:bg-[#e0e0e0] dark:hover:bg-[#24292e]/60 transition-colors duration-300"
                 >
-                  <Github className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                  <Github className="w-5 h-5 text-[#333] dark:text-white" />
                 </a>
+
+                {/* LinkedIn */}
                 <a
                   href="https://www.linkedin.com/in/hitarth-revakar-334245186/"
-                  target='_blank'
-                  className="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center hover:bg-indigo-200 dark:hover:bg-indigo-900/50 transition-colors duration-300"
+                  target="_blank"
+                  className="w-10 h-10 bg-[#e1f3ff] dark:bg-[#0a66c2]/30 rounded-lg flex items-center justify-center hover:bg-[#d0ebff] dark:hover:bg-[#0a66c2]/50 transition-colors duration-300"
                 >
-                  <Linkedin className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                  <Linkedin className="w-5 h-5 text-[#0077b5] dark:text-white" />
+                </a>
+
+                {/* WhatsApp */}
+                <a
+                  href="https://wa.me/919106377782" // Replace with your number
+                  target="_blank"
+                  className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors duration-300"
+                >
+                  <FaWhatsapp className="w-5 h-5 text-green-600 dark:text-green-400" />
                 </a>
               </div>
             </div>

@@ -13,6 +13,20 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("#home");
 
+
+    // ---------------- Stop scrolling while open slider ---------- //
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [menuOpen]);
+
   const handleLinkClick = (href) => {
     setActiveLink(href);
     setMenuOpen(false);
@@ -59,7 +73,7 @@ const Header = () => {
               onClick={() => handleLinkClick(href)}
               initial={{ opacity: 0, y: -5 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05, duration: 0.3 }}
+              transition={{ delay: index * 0.15, duration: 0.3 }}
               className={`relative transition duration-300 ${activeLink === href ? "text-white" : "text-gray-300 dark:text-gray-400 "
                 } hover:text-gray-400`}
             >

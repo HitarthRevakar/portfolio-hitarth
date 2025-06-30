@@ -81,7 +81,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-[#FDFAF6] dark:bg-neutral-900 relative overflow-hidden pt-20 pb-10 px-4"
+      className=" w-full bg-[#FDFAF6] dark:bg-neutral-900 relative overflow-hidden pt-30 pb-30 px-4"
     >
       {/* Background animations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -93,7 +93,7 @@ const About = () => {
       </div>
 
       <motion.div
-        className="container mx-auto max-w-7xl flex flex-col lg:flex-row gap-16 items-start relative z-10"
+        className=" mx-auto w-full flex flex-col lg:flex-row gap-16 items-start relative z-10"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -152,7 +152,7 @@ const About = () => {
 
         {/* Right content section */}
         <motion.div
-          className="lg:w-3/5 w-full space-y-8"
+          className="lg:w-3/5 w-full lg:px-12 space-y-5"
           variants={fadeIn}
           custom={2}
         >
