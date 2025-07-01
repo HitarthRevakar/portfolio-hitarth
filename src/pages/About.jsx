@@ -70,7 +70,7 @@ const About = () => {
   const handleDownloadResume = () => {
     const link = document.createElement("a");
     link.href =
-      "https://drive.google.com/file/d/1N0P9Xw7YBJ0pJIUGAu-zyOnT9Lkw4PBe/view?usp=sharing";
+      "https://drive.google.com/file/d/137ajaRD8LyWOh240VcKhFUTo_A_HvUlA/view?usp=sharing";
     link.download = "RESUME - HITARTH REVAKAR.pdf";
     link.target = "_blank";
     document.body.appendChild(link);
