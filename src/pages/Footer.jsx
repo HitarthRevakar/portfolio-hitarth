@@ -68,13 +68,13 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#EAEFEF] dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-5 lg:px-25">
         {/* Main Footer Content */}
         <div className="py-12 lg:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
 
             {/* Brand Section */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 col-span-2">
               <div className="mb-6">
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
                   Hitarth Revakar
@@ -111,7 +111,7 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-6">
+              <h3 className="text-sm lg:text-xl font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-6">
                 Quick Links
               </h3>
               <ul className="space-y-3">
@@ -130,7 +130,7 @@ const Footer = () => {
 
             {/* Services */}
             <div>
-              <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-6">
+              <h3 className="text-sm lg:text-xl font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-6">
                 Services
               </h3>
               <ul className="space-y-3">

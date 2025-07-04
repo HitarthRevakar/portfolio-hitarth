@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+
+/* eslint-disable no-unused-vars */
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
