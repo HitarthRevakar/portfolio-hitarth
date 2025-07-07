@@ -34,13 +34,13 @@ const projects = [
     featured: false,
   },
   {
-    title: "My Task App",
+    title: "TaskFlow | The Todo App",
     description:
       "Created a RESTful API with Express and PostgreSQL for task tracking, full CRUD operations.",
-    tech: ["React", "tailwindcss", "Express.js", "PostgreSQL", "Knex.js"],
+    tech: ["React", "Express.js", "PostgreSQL", "Knex.js"],
     category: "Frontend & Backend",
     image: "/my-task-app.png",
-    liveUrl: "#",
+    liveUrl: "https://taskflow-the-todo-app.vercel.app/",
     githubUrl: "https://github.com/HitarthRevakar/MyTaskApp",
     codeLinks: [
       { name: "Frontend Repository", url: "https://github.com/HitarthRevakar/mytaskapp-frontend" },
