@@ -5,36 +5,23 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const projects = [
   {
-    title: "E-Commerce Platform  [Live Soon]",
+    title: "Param Group (PCSIONWEB)",
     description:
-      "Built a responsive e-commerce web app with cart, checkout, and admin dashboard using React, Node.js, and MongoDB.",
-    tech: ["React", "Node.js", "MongoDB", "Tailwind"],
+      "Developed a responsive full-stack company website with a admin panel using React, Node.js, PostgreSQL, and Knex.js. Features include secure APIs, express-validation, and mobile-respoisve design.",
+    tech: ["React.js", "Node.js", "PostgreSQL", "Knex.js", "Tailwind CSS", "Framer Motion"],
     category: "Full Stack",
-    image: "/api/placeholder/400/250",
-    liveUrl: "#",
+    image: "/pcsionweb-img.png",
+    liveUrl: "https://pcsionweb.com",
     githubUrl: "#",
     codeLinks: [
       { name: "Frontend Repository", url: "#" },
       { name: "Backend Repository", url: "#" },
     ],
     featured: true,
-  },
+  }
+  ,
   {
-    title: "Portfolio Website",
-    description:
-      "Designed and developed a modern portfolio site using Vite, Tailwind CSS, and Framer Motion animations.",
-    tech: ["React", "TailwindCss","SPA","Framer Motion"],
-    category: "Frontend",
-    image: "/portfolio-img.png",
-    liveUrl: "https://portfolio-hitarth.vercel.app/",
-    githubUrl: "https://github.com/HitarthRevakar/portfolio-hitarth.git",
-    codeLinks: [
-      { name: "Portfolio Repo", url: "https://github.com/HitarthRevakar/portfolio-hitarth.git" },
-    ],
-    featured: false,
-  },
-  {
-    title: "TaskFlow | The Todo App",
+    title: "TaskFlow - The Todo App",
     description:
       "Created a RESTful API with Express and PostgreSQL for task tracking, full CRUD operations.",
     tech: ["React", "Express.js", "PostgreSQL", "Knex.js"],
@@ -319,7 +306,7 @@ const Projects = () => {
                 <p className="text-sm text-neutral-600 dark:text-neutral-300 mb-4">
                   Choose a repository to view:
                 </p>
-                
+
                 {selectedProject.codeLinks?.map((link, index) => (
                   <motion.a
                     key={index}
