@@ -36,19 +36,18 @@ const projects = [
     featured: false,
   },
   {
-    title: "Weather App",
-    description:
-      "Beautiful weather application with location-based forecasts, interactive maps, and responsive design.",
-    tech: ["Html", "CSS", "Javascript (ES6+)", "OpenWeather API"],
-    category: "Frontend",
-    image: "/weather-app.png",
-    liveUrl: "https://weather-app-hitarth-dev.netlify.app/",
-    githubUrl: "https://github.com/HitarthRevakar/weather-app-hitarth-dev",
-    codeLinks: [
-      { name: "Main Repository", url: "https://github.com/HitarthRevakar/weather-app-hitarth-dev" },
+    "title": "QuickStart – Business Landing Page",
+    "description": "Developed a modern, responsive startup landing page using Next.js, Tailwind CSS, and Framer Motion with smooth UI animations.",
+    "tech": ["Next.js", "React.js", "Tailwind CSS", "Framer Motion"],
+    "category": "Frontend",
+    "image": "/startup-opening.png",
+    "liveUrl": "https://startup-sap-webapp-o1xh.vercel.app/",
+    "githubUrl": "https://github.com/HitarthRevakar/startup-sap-webapp",
+    "codeLinks": [
+      { "name": "Frontend Repo.", "url": "https://github.com/HitarthRevakar/startup-sap-webapp" }
     ],
-    featured: false,
-  },
+    "featured": true
+  }
 ];
 
 const cardVariants = {
