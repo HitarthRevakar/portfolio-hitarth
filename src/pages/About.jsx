@@ -63,7 +63,7 @@ const About = () => {
       { name: "Git", icon: FaGitAlt, color: "text-red-500" },
       { name: "GitHub", icon: FaGithub, color: "text-gray-800 dark:text-white" },
       { name: "Postman", icon: SiPostman, color: "text-orange-500" },
-      { name: "VSCode", icon: FaCode, color: "text-blue-600" },  // Using FaCode instead
+      { name: "VSCode", icon: FaCode, color: "text-blue-600" },  
       { name: "Figma", icon: FaFigma, color: "text-purple-500" }
     ]
   };
@@ -72,7 +72,7 @@ const About = () => {
   const handleDownloadResume = () => {
     const link = document.createElement("a");
     link.href =
-      "https://drive.google.com/file/d/1BIthhvr9afRo61mx-lfN1o22vnqYyK4V/view?usp=sharing";
+      "https://drive.google.com/file/d/1PjjP1QeujjTuCMW8ylTAXmjjIjoXM2SJ/view?usp=sharing";
     link.download = "RESUME - HITARTH REVAKAR.pdf";
     link.target = "_blank";
     document.body.appendChild(link);
