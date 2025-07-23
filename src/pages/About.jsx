@@ -25,15 +25,15 @@ const About = () => {
   };
 
   // resume download function
-  const handleDownloadResume = () => {
-    const link = document.createElement("a");
-    link.href = resumeLink;
-    link.download = "RESUME - HITARTH REVAKAR.pdf";
-    link.target = "_blank";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+const handleDownloadResume = () => {
+  const link = document.createElement("a");
+  link.href = resumeLink;
+  link.setAttribute("download", "RESUME - HITARTH REVAKAR.pdf");
+  link.setAttribute("target", "_blank");
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
   return (
     <section
