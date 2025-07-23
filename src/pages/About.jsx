@@ -1,26 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-
-import {
-  Code,
-  Briefcase,
-  GraduationCap,
-  Download,
-  MapPin,
-  Calendar,
-  Award,
-} from "lucide-react";
 import Photo from "../assets/photo.png";
-
-import {
-  FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaGitAlt, FaGithub, FaFigma, FaCode
-} from 'react-icons/fa';
-import {
-  SiTailwindcss, SiBootstrap, SiExpress, SiMongodb, SiPostgresql,
-  SiFirebase, SiPostman, SiKnexdotjs
-} from 'react-icons/si';
-import { TbApi } from 'react-icons/tb';
+import skills from "../components/SkillsData";
+import { Code, Briefcase, GraduationCap, Download,MapPin, Calendar, Award, } from "lucide-react";
+const resumeLink = import.meta.env.VITE_RESUME_LINK;
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("skills");
@@ -40,39 +24,10 @@ const About = () => {
     }),
   };
 
-  const skills = {
-    frontend: [
-      { name: "React", icon: FaReact, color: "text-blue-500" },
-      { name: "HTML5", icon: FaHtml5, color: "text-orange-500" },
-      { name: "CSS3", icon: FaCss3Alt, color: "text-blue-600" },
-      { name: "TailwindCSS", icon: SiTailwindcss, color: "text-cyan-500" },
-      { name: "Bootstrap 5", icon: SiBootstrap, color: "text-purple-600" }
-    ],
-    backend: [
-      { name: "Node.js", icon: FaNodeJs, color: "text-green-500" },
-      { name: "Express.js", icon: SiExpress, color: "text-gray-600" },
-      { name: "Knex.js", icon: SiKnexdotjs, color: "text-orange-600" },
-      { name: "REST API", icon: TbApi, color: "text-blue-500" }
-    ],
-    database: [
-      { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
-      { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-700" },
-      { name: "Firebase", icon: SiFirebase, color: "text-yellow-500" }
-    ],
-    tools: [
-      { name: "Git", icon: FaGitAlt, color: "text-red-500" },
-      { name: "GitHub", icon: FaGithub, color: "text-gray-800 dark:text-white" },
-      { name: "Postman", icon: SiPostman, color: "text-orange-500" },
-      { name: "VSCode", icon: FaCode, color: "text-blue-600" },  
-      { name: "Figma", icon: FaFigma, color: "text-purple-500" }
-    ]
-  };
-
-  // PDF download function
+  // resume download function
   const handleDownloadResume = () => {
     const link = document.createElement("a");
-    link.href =
-      "https://drive.google.com/file/d/1PjjP1QeujjTuCMW8ylTAXmjjIjoXM2SJ/view?usp=sharing";
+    link.href = resumeLink;
     link.download = "RESUME - HITARTH REVAKAR.pdf";
     link.target = "_blank";
     document.body.appendChild(link);

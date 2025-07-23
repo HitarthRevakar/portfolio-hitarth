@@ -2,53 +2,7 @@
 import React, { useState } from "react";
 import { ExternalLink, Github, ArrowUpRight, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const projects = [
-  {
-    title: "Param Group (PCSIONWEB)",
-    description:
-      "Developed a responsive full-stack company website with a admin panel using React, Node.js, PostgreSQL, and Knex.js. Features include secure APIs, express-validation, and mobile-respoisve design.",
-    tech: ["React.js", "Node.js", "PostgreSQL", "Knex.js", "Tailwind CSS", "Framer Motion"],
-    category: "Full Stack",
-    image: "/pcsionweb-img.png",
-    liveUrl: "https://pcsionweb.com",
-    githubUrl: "#",
-    codeLinks: [
-      { name: "Frontend Repository", url: "#" },
-      { name: "Backend Repository", url: "#" },
-    ],
-    featured: true,
-  }
-  ,
-  {
-    title: "TaskFlow - The Todo App",
-    description:
-      "Created a RESTful API with Express and PostgreSQL for task tracking, full CRUD operations.",
-    tech: ["React", "Express.js", "PostgreSQL", "Knex.js"],
-    category: "Frontend & Backend",
-    image: "/my-task-app.png",
-    liveUrl: "https://taskflow-the-todo-app.vercel.app/",
-    githubUrl: "https://github.com/HitarthRevakar/MyTaskApp",
-    codeLinks: [
-      { name: "Frontend Repository", url: "https://github.com/HitarthRevakar/mytaskapp-frontend" },
-      { name: "Backend Repository", url: "https://github.com/HitarthRevakar/mytaskapp-backend" },
-    ],
-    featured: false,
-  },
-  {
-    "title": "QuickStart – Business Landing Page",
-    "description": "Developed a modern, responsive startup landing page using Next.js, Tailwind CSS, and Framer Motion with smooth UI animations.",
-    "tech": ["Next.js", "React.js", "Tailwind CSS", "Framer Motion"],
-    "category": "Frontend",
-    "image": "/startup-opening.png",
-    "liveUrl": "https://startup-sap-webapp-o1xh.vercel.app/",
-    "githubUrl": "https://github.com/HitarthRevakar/startup-sap-webapp",
-    "codeLinks": [
-      { "name": "Frontend Repo.", "url": "https://github.com/HitarthRevakar/startup-sap-webapp" }
-    ],
-    "featured": true
-  }
-];
+import projects from "../data/ProjectData.json";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50, scale: 0.9 },
@@ -210,7 +164,7 @@ const Projects = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-indigo-600 dark:text-indigo-400 hover:underline text-sm font-medium"
+                      className="flex items-center text-green-600 dark:text-green-400 hover:underline text-sm font-medium"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >

@@ -19,14 +19,12 @@ const ScrollNav = () => {
       setShow(!atTop && !atBottom);
       setShowUp(scrollTop > windowHeight / 5);
 
-      // User is active → reset idle state
       setIsIdle(false);
       if (idleTimeoutRef.current) clearTimeout(idleTimeoutRef.current);
 
-      // Start new idle timer (e.g. 2s)
       idleTimeoutRef.current = setTimeout(() => {
         setIsIdle(true);
-      }, 2000);
+      }, 3000);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -54,14 +52,16 @@ const ScrollNav = () => {
   return (
     <button
       onClick={scrollBehavior}
-      className="fixed bottom-6 right-6 z-50 group w-14 h-14 flex items-center justify-center rounded-2xl bg-gray-800 dark:bg-gray-800 text-white shadow-md transition-all duration-300 hover:scale-110 hover:shadow-lg"
+      className="fixed bottom-6 right-6 z-50 group w-14 h-14 flex items-center justify-center rounded-[50%] bg-gray-800 text-white shadow-lg transition-transform duration-500 hover:scale-110 hover:shadow-xl animate-fadeInUp"
       aria-label={showUp ? "Scroll to Top" : "Scroll to Next Section"}
     >
-      <span className="transition-transform duration-300 group-hover:animate-pulse group-hover:translate-y-1">
+      <span
+        className={`transition-transform duration-300 group-hover:animate-wiggle`}
+      >
         {showUp ? (
-          <ChevronUp className="w-5 h-5" />
+          <ChevronUp className="w-6 h-6" />
         ) : (
-          <ChevronDown className="w-5 h-5" />
+          <ChevronDown className="w-6 h-6" />
         )}
       </span>
     </button>
