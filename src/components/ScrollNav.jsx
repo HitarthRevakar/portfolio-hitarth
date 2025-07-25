@@ -52,7 +52,7 @@ const ScrollNav = () => {
   return (
     <button
       onClick={scrollBehavior}
-      className="fixed bottom-6 right-6 z-50 group w-14 h-14 flex items-center justify-center rounded-[50%] bg-gray-800 text-white shadow-lg transition-transform duration-500 hover:scale-110 hover:shadow-xl animate-fadeInUp"
+      className="fixed bottom-6 right-6 z-50 group w-14 h-14 flex items-center justify-center rounded-[50%] bg-gray-800 text-white shadow-lg transition-transform duration-500 hover:scale-110 hover:shadow-xl animate-fadeInUp cursor-pointer"
       aria-label={showUp ? "Scroll to Top" : "Scroll to Next Section"}
     >
       <span

@@ -190,8 +190,8 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* View More Button */}
-        <motion.div
+        {/* ------ View More Button ----- for external page */}
+        {/* <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -207,7 +207,7 @@ const Projects = () => {
               <ArrowUpRight className="w-5 h-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
             </span>
           </motion.button>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Modal */}

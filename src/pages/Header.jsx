@@ -65,9 +65,9 @@ const Header = () => {
   return (
 <motion.header
   className="fixed top-0 left-0 w-full z-50 text-white
-             md:top-5 md:left-1/2 md:-translate-x-1/2  xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md
+             md:top-5 md:left-1/2 md:-translate-x-1/2  lg:max-w-screen-lg md:max-w-screen-md 
              md:rounded-2xl md:bg-[#0f172a]/90 md:backdrop-blur-lg
-             bg-[#0f172a]"
+             bg-[#0f172a]  border-b border-gray-700"
   initial={{ y: 0 }}
   animate={{ y: showNavbar ? 0 : "-110%" }}
   transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -76,7 +76,7 @@ const Header = () => {
     <a
       href="#home"
       onClick={() => setActiveLink("#home")}
-      className="text-2xl font-extrabold tracking-wide text-white hover:text-gray-400 transition custom-title"
+      className="text-2xl font-extrabold tracking-wide text-white hover:text-gray-400 active:scale-90 duration-300 transition custom-title"
     >
       &lt; HR /&gt;
     </a>
