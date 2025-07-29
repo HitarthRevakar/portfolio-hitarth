@@ -14,18 +14,17 @@
     "featured": true
   },
   {
-    "title": "TaskFlow - The Todo App",
-    "description": "Created a RESTful API with Express and PostgreSQL for task tracking, full CRUD operations.",
-    "tech": ["React", "Express.js", "PostgreSQL", "Knex.js"],
-    "category": "Frontend & Backend",
-    "image": "/my-task-app.png",
-    "liveUrl": "https://taskflow-the-todo-app.vercel.app/",
-    "githubUrl": "https://github.com/HitarthRevakar/MyTaskApp",
+    "title": "SmartLearn - School Academy ",
+    "description": "SmartLearn – School Academy is a modern React-based frontend platform integrating a sleek, responsive UI built with Tailwind CSS and Formik-powered forms. ",
+    "tech": ["React.js", "Tailwind CSS", "Formik"],
+    "category": "Frontend",
+    "image": "/smartlearn-webapp.png",
+    "liveUrl": "https://smartlearn-web.vercel.app",
+    "githubUrl": "https://github.com/HitarthRevakar/smartlearn-web",
     "codeLinks": [
-      { "name": "Frontend Repository", "url": "https://github.com/HitarthRevakar/mytaskapp-frontend" },
-      { "name": "Backend Repository", "url": "https://github.com/HitarthRevakar/mytaskapp-backend" }
+      { "name": "Frontend Repo.", "url": "https://github.com/HitarthRevakar/smartlearn-web" }
     ],
-    "featured": false
+    "featured": true
   },
   {
     "title": "QuickStart – Business Landing Page",
@@ -33,11 +32,25 @@
     "tech": ["Next.js", "React.js", "Tailwind CSS", "Framer Motion"],
     "category": "Frontend",
     "image": "/startup-opening.png",
-    "liveUrl": "https://startup-sap-webapp-o1xh.vercel.app/",
+    "liveUrl": "https://startup-sap-webapp-o1xh.vercel.app",
     "githubUrl": "https://github.com/HitarthRevakar/startup-sap-webapp",
     "codeLinks": [
       { "name": "Frontend Repo.", "url": "https://github.com/HitarthRevakar/startup-sap-webapp" }
     ],
     "featured": true
+  },
+  {
+    "title": "TaskFlow - The Todo App",
+    "description": "Created a RESTful API with Express and PostgreSQL for task tracking, full CRUD operations.",
+    "tech": ["React", "Express.js", "PostgreSQL", "Knex.js"],
+    "category": "Frontend & Backend",
+    "image": "/my-task-app.png",
+    "liveUrl": "https://taskflow-the-todo-app.vercel.app",
+    "githubUrl": "https://github.com/HitarthRevakar/MyTaskApp",
+    "codeLinks": [
+      { "name": "Frontend Repository", "url": "https://github.com/HitarthRevakar/mytaskapp-frontend" },
+      { "name": "Backend Repository", "url": "https://github.com/HitarthRevakar/mytaskapp-backend" }
+    ],
+    "featured": false
   }
 ]
