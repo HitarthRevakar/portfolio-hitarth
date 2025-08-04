@@ -6,11 +6,13 @@ import Header from "./pages/Header";
 import Footer from "./pages/Footer";
 import ScrollNav from "./components/ScrollNav";
 import "./App.css";
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
 
   return (
     <>
+    <CustomCursor />
       <Header />
       <main>
         <Home />

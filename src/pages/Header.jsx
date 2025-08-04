@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -16,7 +16,6 @@ const Header = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Disable scroll when menu open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
     return () => {
@@ -24,13 +23,11 @@ const Header = () => {
     };
   }, [menuOpen]);
 
-  // Track active section while scrolling
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const scrollPosition = scrollY + window.innerHeight / 3;
 
-      // Determine if scrolling down or up
       if (scrollY > lastScrollY && scrollY > 80) {
         setShowNavbar(false);
       } else {
@@ -39,7 +36,6 @@ const Header = () => {
 
       setLastScrollY(scrollY);
 
-      // Update active link
       for (const { href } of navLinks) {
         const section = document.querySelector(href);
         if (section) {
@@ -63,115 +59,156 @@ const Header = () => {
   };
 
   return (
-<motion.header
-  className="fixed top-0 left-0 w-full z-50 text-white
-             md:top-5 md:left-1/2 md:-translate-x-1/2  lg:max-w-screen-lg md:max-w-screen-md 
-             md:rounded-2xl md:bg-[#0f172a]/90 md:backdrop-blur-lg
-             bg-[#0f172a]  border-b border-gray-700"
-  initial={{ y: 0 }}
-  animate={{ y: showNavbar ? 0 : "-110%" }}
-  transition={{ duration: 0.5, ease: "easeInOut" }}
->
-  <div className="w-full mx-auto px-5 md:px-10 py-4 flex justify-between items-center">
-    <a
-      href="#home"
-      onClick={() => setActiveLink("#home")}
-      className="text-2xl font-extrabold tracking-wide text-white hover:text-gray-400 active:scale-90 duration-300 transition custom-title"
+    <motion.header
+      className="fixed top-0 left-0 w-full z-50 text-white md:top-5 md:left-1/2 md:-translate-x-1/2 lg:max-w-screen-lg md:max-w-screen-md md:rounded-2xl"
+      initial={{ y: 0 }}
+      animate={{ y: showNavbar ? 0 : "-110%" }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
     >
-      &lt; HR /&gt;
-    </a>
+      <div className="relative">
+        {/* Gradient Border */}
+        <div className="hidden md:block absolute inset-0 bg-gray-900/70 rounded-2xl"></div>
 
-    <nav className="hidden md:flex gap-10 font-medium uppercase tracking-wide">
-      {navLinks.map(({ href, label }, index) => (
-        <motion.a
-          key={label}
-          href={href}
-          onClick={() => handleLinkClick(href)}
-          initial={{ opacity: 0, y: -5 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.15, duration: 0.3 }}
-          className={`relative transition duration-300 ${
-            activeLink === href
-              ? "text-white"
-              : "text-gray-300 dark:text-gray-400 hover:text-white"
-          } hover:text-gray-400`}
-        >
-          {label}
-          <span
-            className={`absolute left-0 -bottom-1 h-0.5 bg-violet-500 transition-all duration-300 ease-in-out ${
-              activeLink === href ? "w-full" : "w-0 group-hover:w-full"
-            }`}
-          />
-        </motion.a>
-      ))}
-    </nav>
+        <div className="relative md:m-[1px] md:rounded-2xl bg-black/90 md:bg-black/20 md:backdrop-blur-xl border-b border-white/10 md:border-none">
 
-    {/* Mobile Toggle */}
-    <button
-      onClick={() => setMenuOpen(true)}
-      className="md:hidden text-gray-200 hover:text-white transition "
-      aria-label="Open Menu"
-    >
-      <Menu size={28} className="cursor-pointer text-white hover:text-violet-500 transition duration-200" />
-
-    </button>
-  </div>
-
-  {/* Mobile Menu */}
-  <AnimatePresence>
-    {menuOpen && (
-      <>
-        <motion.div
-          initial={{ x: "100%" }}
-          animate={{ x: 0 }}
-          exit={{ x: "100%" }}
-          transition={{ duration: 0.2 }}
-          className="fixed top-0 right-0 h-full w-full max-w-[300px] bg-[#0f172a] text-white z-50 px-6 py-8 shadow-2xl flex flex-col"
-        >
-          <div className="flex justify-end">
-            <button
-              onClick={() => setMenuOpen(false)}
-              aria-label="Close Menu"
-              className="text-white hover:text-violet-500"
+          <div className="relative z-10 w-full mx-auto px-5 md:px-10 py-4 flex justify-between items-center">
+            <motion.a
+              href="#home"
+              onClick={() => setActiveLink("#home")}
+              whileHover={{ scale: 1 }}
+              whileTap={{ scale: 0.90 }}
+              className="relative"
             >
-              <X
-                size={28}
-                className="cursor-pointer border border-gray-800 rounded-md p-1 size-9"
-              />
-            </button>
+              <div className="text-2xl font-extrabold tracking-wide">
+                <span className="text-white">
+                  &lt; HR /&gt;
+                </span>
+              </div>
+            </motion.a>
+
+
+            <nav className="hidden md:flex gap-8 font-medium tracking-wide">
+              {navLinks.map(({ href, label }, index) => (
+                <motion.a
+                  key={label}
+                  href={href}
+                  onClick={() => handleLinkClick(href)}
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.3 }}
+                  whileHover={{ y: -2 }}
+                  className="relative group transition-all duration-300"
+                >
+                  <span
+                    className={`transition-all duration-300 ${activeLink === href
+                      ? "text-indigo-400 font-semibold"
+                      : "text-gray-300 group-hover:text-white"
+                      }`}
+                  >
+                    {label}
+                  </span>
+                  <span
+                    className={`absolute left-0 -bottom-1 h-0.5 bg-indigo-400 transition-all duration-300 ease-in-out ${activeLink === href ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 via-blue-600/10 to-emerald-500/10 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 scale-150"></div>
+                </motion.a>
+              ))}
+            </nav>
+
+            <motion.button
+              onClick={() => setMenuOpen(true)}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="md:hidden p-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg hover:border-indigo-500/50 transition-all duration-300 group"
+              aria-label="Open Menu"
+            >
+              <Menu size={24} className="text-gray-300 group-hover:text-indigo-400 transition-colors duration-300" />
+            </motion.button>
           </div>
+        </div>
+      </div>
 
-          <nav className="flex flex-col gap-8 mt-10 text-[24px] font-medium">
-            {navLinks.map(({ href, label }) => (
-              <a
-                key={label}
-                href={href}
-                onClick={() => handleLinkClick(href)}
-                className={`transition-colors duration-300 ${
-                  activeLink === href
-                    ? "text-violet-400 font-semibold"
-                    : "text-gray-300 hover:text-violet-500"
-                }`}
-              >
-                {label}
-              </a>
-            ))}
-          </nav>
-        </motion.div>
+      <AnimatePresence>
+        {menuOpen && (
+          <>
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="fixed top-0 right-0 h-full w-full max-w-[300px] z-50 shadow-2xl flex flex-col bg-black"
+            >
+              <div className="relative z-10 px-6 py-8 h-full">
+                <div className="flex justify-end mb-10">
+                  <motion.button
+                    onClick={() => setMenuOpen(false)}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    aria-label="Close Menu"
+                    className="p-2 bg-white/5 border border-white/10 rounded-lg hover:border-indigo-500/50 transition-all duration-300 group"
+                  >
+                    <X size={24} className="text-gray-300 group-hover:text-indigo-400 transition-colors duration-300" />
+                  </motion.button>
+                </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black z-40"
-          onClick={() => setMenuOpen(false)}
-        />
-      </>
-    )}
-  </AnimatePresence>
-</motion.header>
+                <nav className="flex flex-col gap-6 text-xl font-medium">
+                  {navLinks.map(({ href, label }, index) => (
+                    <motion.a
+                      key={label}
+                      href={href}
+                      onClick={() => handleLinkClick(href)}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.3 }}
+                      whileHover={{ x: 10 }}
+                      className={`relative group p-3 rounded-lg transition-all duration-300 ${activeLink === href
+                        ? "bg-white/5 border border-white/10"
+                        : "hover:bg-white/5"
+                        }`}
+                    >
+                      <span
+                        className={`transition-all duration-300 ${activeLink === href
+                          ? "text-indigo-400 font-semibold"
+                          : "text-gray-300 group-hover:text-white"
+                          }`}
+                      >
+                        {label}
+                      </span>
 
+                      {activeLink === href && (
+                        <motion.div
+                          layoutId="mobileActiveLink"
+                          className="absolute left-0 top-0 bottom-0 w-1 bg-indigo-400 rounded-r"
+                        />
+                      )}
+                    </motion.a>
 
+                  ))}
+                </nav>
+
+                <div className="absolute bottom-10 left-6 right-6">
+                  <div className="flex items-center justify-center gap-2 text-emerald-400 text-sm">
+                    <Sparkles className="w-4 h-4" />
+                    <span>Crafted with passion</span>
+                    <Sparkles className="w-4 h-4" />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.8 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-40 bg-black/80"
+              onClick={() => setMenuOpen(false)}
+            />
+          </>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 };
 
