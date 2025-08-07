@@ -19,7 +19,7 @@ const CustomCursor = () => {
 
   return (
     <motion.div
-      className="fixed pointer-events-none z-50 hidden md:flex"
+      className="fixed pointer-events-none z-50 hidden md:flex z-100"
       animate={{
         x: mousePosition.x - 20, // Center the ring
         y: mousePosition.y - 20,

@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,15 +24,6 @@ const Footer = () => {
         </svg>
       )
     },
-    // {
-    //   name: 'Twitter',
-    //   url: 'https://twitter.com/hitarthrevakar',
-    //   icon: (
-    //     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    //       <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
-    //     </svg>
-    //   )
-    // },
     {
       name: 'Email',
       url: 'mailto:hitarthrevakar4@gmail.com',
@@ -42,7 +35,7 @@ const Footer = () => {
     },
     {
       name: 'WhatsApp',
-      url: 'https://wa.me/919106377782', // replace with your full phone number (no + or spaces)
+      url: 'https://wa.me/919106377782',
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
           <path d="M16.002 3.2c-7.066 0-12.8 5.734-12.8 12.8 0 2.261.59 4.466 1.711 6.398L3.2 28.8l6.672-1.729a12.738 12.738 0 006.13 1.574h.001c7.066 0 12.8-5.734 12.8-12.8S23.068 3.2 16.002 3.2zm0 23.2a10.4 10.4 0 01-5.378-1.477l-.385-.23-3.962 1.025 1.062-3.872-.25-.396a10.405 10.405 0 01-1.65-5.607c0-5.734 4.666-10.4 10.4-10.4s10.4 4.666 10.4 10.4-4.666 10.4-10.4 10.4zm5.705-7.815c-.313-.156-1.847-.914-2.135-1.017s-.494-.156-.703.156-.805 1.017-.988 1.227-.363.234-.676.078c-.313-.156-1.323-.488-2.519-1.558-.93-.828-1.558-1.849-1.742-2.162s-.02-.481.137-.637c.141-.14.313-.363.469-.547.156-.184.208-.313.312-.519.105-.208.053-.39-.025-.547s-.703-1.7-.961-2.323c-.254-.608-.512-.523-.703-.532l-.598-.01a1.151 1.151 0 00-.832.39c-.288.313-1.1 1.074-1.1 2.617s1.127 3.032 1.284 3.239c.156.208 2.22 3.396 5.385 4.758.753.324 1.34.518 1.798.662.756.24 1.444.207 1.988.127.606-.09 1.847-.754 2.109-1.482.26-.726.26-1.348.182-1.48s-.286-.207-.598-.363z" />
@@ -66,105 +59,174 @@ const Footer = () => {
     'Maintenance'
   ];
 
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.1, duration: 0.6, ease: 'easeOut' }
+    })
+  };
+
   return (
-    <footer className="bg-[#EAEFEF] dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-      <div className="w-full mx-auto px-5 lg:px-25">
+    <footer className="relative w-full bg-black text-white overflow-hidden">
+      {/* Holographic Grid Background */}
+      <div
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px'
+        }}
+      />
+
+      {/* Background gradient effects
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-violet-600/10 via-pink-600/10 to-cyan-600/10 blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-cyan-600/10 via-purple-600/10 to-pink-600/10 blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
+      </div> */}
+
+      {/* Floating elements */}
+      <div className="absolute top-10 left-10 w-3 h-3 bg-violet-400 rounded-full animate-float opacity-60" />
+      <div className="absolute top-20 right-20 w-2 h-2 bg-cyan-400 rounded-full animate-float-delayed opacity-60" />
+      <div className="absolute bottom-20 left-20 w-4 h-4 bg-pink-400 rounded-full animate-float-slow opacity-60" />
+
+      <div className="relative z-10 w-full mx-auto px-4 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-12 lg:py-16">
+        <motion.div
+          className="py-12 lg:py-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
 
             {/* Brand Section */}
-            <div className="lg:col-span-2 col-span-2">
+            <motion.div
+              className="lg:col-span-2 col-span-2"
+              variants={fadeInUp}
+              custom={1}
+            >
               <div className="mb-6">
-                <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+                <h2 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-white via-white to-gray-300 bg-clip-text text-transparent">
                   Hitarth Revakar
                 </h2>
-                <div className="mt-2 h-1 w-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
+                <div className="mt-2 h-1 w-16 bg-gradient-to-r from-violet-500 via-pink-500 to-cyan-500 rounded-full"></div>
               </div>
 
-              <p className="text-gray-600 dark:text-gray-300 text-base lg:text-lg leading-relaxed mb-6 max-w-md">
+              <p className="text-gray-400 text-base lg:text-lg leading-relaxed mb-6 max-w-md">
                 Full-stack developer passionate about creating exceptional digital experiences.
                 Specialized in modern web technologies and user-centered design.
               </p>
 
               {/* Social Links */}
               <div>
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4">
+                <h3 className="text-sm font-semibold text-pink-400 uppercase tracking-wider mb-4">
                   Connect With Me
                 </h3>
                 <div className="flex space-x-4">
-                  {socialLinks.map((social) => (
-                    <a
+                  {socialLinks.map((social, index) => (
+                    <motion.a
                       key={social.name}
                       href={social.url}
                       target={social.name !== 'Email' ? '_blank' : undefined}
                       rel={social.name !== 'Email' ? 'noopener noreferrer' : undefined}
-                      className="p-2 text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                      className="p-3 bg-gray-900/70 backdrop-blur-2xl border border-white/20 rounded-lg hover:border-violet-500/50 hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all duration-300 text-gray-400 hover:text-white"
                       aria-label={`Follow on ${social.name}`}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 + 0.5 }}
                     >
                       {social.icon}
-                    </a>
+                    </motion.a>
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Quick Links */}
-            <div>
-              <h3 className="text-sm lg:text-xl font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-6">
+            <motion.div
+              variants={fadeInUp}
+              custom={2}
+            >
+              <h3 className="text-sm lg:text-xl font-semibold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent uppercase tracking-wider mb-6">
                 Quick Links
               </h3>
               <ul className="space-y-3">
-                {quickLinks.map((link) => (
-                  <li key={link.name}>
+                {quickLinks.map((link, index) => (
+                  <motion.li
+                    key={link.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 + 0.7 }}
+                  >
                     <a
                       href={link.href}
-                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 text-sm"
+                      className="text-gray-400 hover:text-violet-400 transition-colors duration-300 text-sm hover:translate-x-1 inline-block transform"
                     >
                       {link.name}
                     </a>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
             {/* Services */}
-            <div>
-              <h3 className="text-sm lg:text-xl font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-6">
+            <motion.div
+              variants={fadeInUp}
+              custom={3}
+            >
+              <h3 className="text-sm lg:text-xl font-semibold bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent uppercase tracking-wider mb-6">
                 Services
               </h3>
               <ul className="space-y-3">
-                {services.map((service) => (
-                  <li key={service}>
-                    <span className="text-gray-600 dark:text-gray-300 text-sm">
+                {services.map((service, index) => (
+                  <motion.li
+                    key={service}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 + 0.9 }}
+                  >
+                    <span className="text-gray-400 text-sm flex items-center">
+                      <span className="w-1 h-1 bg-cyan-400 rounded-full mr-2"></span>
                       {service}
                     </span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-200 dark:border-gray-800 py-6">
+        <motion.div
+          className="border-t border-white/20 py-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+        >
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-            <div className="text-sm text-gray-500 dark:text-gray-400">
+            <div className="text-sm text-gray-400">
               © {currentYear} Hitarth Revakar. All rights reserved.
             </div>
 
-            <div className="flex items-center space-x-6 text-sm text-gray-500 dark:text-gray-400">
+            <div className="flex items-center space-x-6 text-sm text-gray-400">
               <span className="flex items-center">
-                Made with
-                <svg className="w-4 h-4 text-red-500 mx-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                </svg>
-                Hitarth Revakar
+                Made by &nbsp;
+                <span className="bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent font-medium">
+                  Hitarth Revakar
+                </span>
               </span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
+
+
     </footer>
   );
 };

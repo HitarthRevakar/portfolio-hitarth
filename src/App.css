@@ -178,3 +178,30 @@ html {
 
 
   /* -------------- end -------------- */
+
+:root {
+  --scrollbar-bg: #000;
+  --scrollbar-thumb: #635ef1;
+  --scrollbar-thumb-hover: #555;
+}
+
+ /* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 20px;
+  background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
+}

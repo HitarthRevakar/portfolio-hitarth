@@ -185,7 +185,7 @@ const Home = () => {
                         ],
                       </div>
                       <div className="text-gray-200 pl-4">
-                        passion: <span className="text-pink-400">'Digital Creation'</span>,
+                        passion: <span className="text-pink-400">'Digital Creation, Self-Learner, Keep Improving'</span>,
                       </div>
                       <div className="text-purple-300">
                         {"}"};
